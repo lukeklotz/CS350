@@ -14,7 +14,7 @@ def fib(n, total_calls):
     return fib(n-1, total_calls) + fib(n-2, total_calls)
 
 total_calls = [0]       # keeping track of total calls for fun
-n           = 11        # nth fib number
+n           = 5         # nth fib number
 
 print(f"{n}th fib number is {fib(n, total_calls)}") 
 print(f"and it took your computer {total_calls[0]} operations to find it") 

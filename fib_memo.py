@@ -14,7 +14,7 @@ def fib(n, table):
 
     # TWO things can happen in the table:
     # 1. It can have values of the fib sequence
-    # 2. It can have empty slots (denoted as -1)
+    # 2. It can have empty slots (indicated by -1)
 
     if table[n] != -1:   #  NOT EMPTY. 
         return table[n]  #  Return value in table   
@@ -23,7 +23,7 @@ def fib(n, table):
         return table[n]                               # Return the new value
 
 
-n       = 8
+n       = 5
 table   = [-1] * (n + 1)
 res     = fib(n, table)
 
