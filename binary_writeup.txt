@@ -1,0 +1,16 @@
+Lucas Klotz
+Algorithms and Complexity
+Binary Search
+1/19/2025
+
+-- Explain how your algorithm works for this problem. 
+
+    This algorithm works by checking which half of the array's lowest value is in and discarding the half it’s not in. This effectively reduces the search time from O(n) to O(logn) in the worst case scenario. If s or e are equal to mid, then that means we have either 1 or 2 indicies left to check. In this case, nums[s] is compared with nums[e], and whichever is the lowest value gets its index returned. 
+Where do we see interval halving at work here?
+If the array is rotated < or > n times, then interval halving happens by comparing the starting index (index = 0), to the middle index (s + e // 2). If nums[s] > nums[mid], then that means the lowest value is in the right half, and so start is set to the current middle index, and the new middle index is recalculated. Since the array is originally in sorted order, then we know if the middle value is greater than the starting value, then all of those numbers are in increasing order, therefor, the smallest number is located in the 2nd half. If s < mid, then it's in the first half, and end (len(nums) - 1) is set to mid.
+What is the best-case scenario? 
+The best case scenario for my algorithm happens when nums[s] < nums[e]. This means the array is rotated n times, which means it's in sorted order from lowest to highest. In this case, nums[s] is the lowest value, and so the algorithm can skip the search process by simply returning s. The efficiency for this scenario is O(1).
+What is the worst-case scenario? 
+In the worst case scenario, the algorithm performs at O(logn). 
+Could this be done using Linear Search?
+Yes, but in the worst case scenario, the efficiency would be O(n), which isn’t ideal when dealing with large sets of data.
