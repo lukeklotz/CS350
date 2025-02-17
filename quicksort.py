@@ -4,6 +4,7 @@ def quicksort(array, lo, hi):
         return
     mid = partition(array, lo, hi) 
 
+    print(mid)
     #print(mid)
     #go left
     quicksort(array, lo, mid - 1)
@@ -32,7 +33,7 @@ def partition(array, lo, hi):
 
     return pl
 
-a = [3, 2, 5, 1]
+a = [1, 5, 9, 6, 7]
 
 hi = len(a) - 1
 

@@ -35,9 +35,9 @@ def findMin(nums):
                 return s
             if nums[s] > nums[e]:
                 return e
-        if nums[s] > nums[mid]: # lowest in left half
+        if nums[s] > nums[mid]: # lowest in 2nd half
             e = mid
-        if nums[s] < nums[mid]: # lowest in right half
+        if nums[s] < nums[mid]: # lowest in 1st half
             s = mid
     
 
