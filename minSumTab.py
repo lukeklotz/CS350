@@ -2,50 +2,40 @@
 
 def tab(arr, table, i, j):
 
-        
-
+    #base case. return result
     if i <= 0 and j <= 0:
-        table[0][0] = arr[0][0] + min(table[i+1][j], table[i+1][j+1])
-        print(table)
-        return table[0][0]
+        return arr[0][0] + min(table[i+1][j], table[i+1][j+1]) 
     
-    if i == 3: #initialize bottom row
+    #initialize bottom row of table
+    if i == 3:                               
         while j >= 0:
             table[i][j] = arr[i][j]
             j -= 1
         i -= 1
-        j = 3
+        j = 3  # reset j
 
-    if arr[i][j] != 0:
-        #print(arr[i][j])
-        a = table[i+1][j]
+    #update table
+    if arr[i][j] != 0:          
+        a = table[i+1][j] # check paths in table
         b = table[i+1][j+1]
-        table[i][j] = min(a, b) + arr[i][j]
+        table[i][j] = min(a, b) + arr[i][j] 
 
     else:
-        return tab(arr, table, i, j - 1)
+        return tab(arr, table, i, j - 1)     # if outside triangle, iterate j backwards
 
     if j <= 0:
-        return tab(arr, table, i - 1, 3)
+        return tab(arr, table, i - 1, 3)     # last column, move to row - 1
 
-    return tab(arr, table, i, j - 1)
-
-
-
-
-
+    return tab(arr, table, i, j - 1)         # iterate column
 
 arr = [[1, 0, 0, 0],
        [3, 1, 0, 0],
-       [1, 1, 3, 0],
-       [1, 1, 2, 5]]
-
+       [1, 1, 1, 0],
+       [1, 5, 2, 5]]
 
 table = [[0, 0, 0, 0],
          [0, 0, 0, 0],
          [0, 0, 0, 0],
          [0, 0, 0, 0]]
-
-
 
 print(tab(arr, table, 3, 3))
