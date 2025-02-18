@@ -10,9 +10,9 @@ def minSum(arr, i, j):
     return min(a, b) + arr[i][j]     #return smallest num plus current num
     
 
-arr = [[5, 0, 0, 0],
-       [3, 4, 0, 0],
-       [8, 3, 6, 0],
-       [3, 2, 2, 9]]
+arr = [[1, 0, 0, 0],
+       [3, 1, 0, 0],
+       [8, 3, 1, 0],
+       [3, 2, 2, 1]]
 
 print(minSum(arr, 0, 0))
