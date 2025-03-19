@@ -20,6 +20,6 @@ def minMemo(arr, i, j, table):
 arr = [[5, 0, 0, 0],
        [3, 4, 0, 0],
        [8, 3, 6, 0],
-       [3, 2, 2, 9]]
+       [3, 2, 1, 9]]
 
 print(minMemo(arr, 0, 0, table=None))

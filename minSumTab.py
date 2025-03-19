@@ -7,17 +7,18 @@ def tab(arr, table, i, j):
         return arr[0][0] + min(table[i+1][j], table[i+1][j+1]) 
     
     #initialize bottom row of table
+    #note that i STARTS at 3
     if i == 3:                               
         while j >= 0:
             table[i][j] = arr[i][j]
-            j -= 1
-        i -= 1
-        j = 3  # reset j
+            j -= 1   #move backwards along the bottom row
+        i -= 1 # move to next row up
+        j = 3  # reset j  
 
     #update table
-    if arr[i][j] != 0:          
-        a = table[i+1][j] # check paths in table
-        b = table[i+1][j+1]
+    if arr[i][j] != 0:    # check if we're inside the triangle        
+        a = table[i+1][j]     # check down
+        b = table[i+1][j+1]   # check down->right
         table[i][j] = min(a, b) + arr[i][j] 
 
     else:
